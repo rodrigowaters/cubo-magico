@@ -23,6 +23,12 @@ switch (screen.width) {
     case 768 :
         Face.SIZE = 200;
         break;
+    case 800 :
+        Face.SIZE = 200;
+        break;
+    case 1280 :
+        Face.SIZE = 200;
+        break;
     default :
         Face.SIZE = 100;
 }

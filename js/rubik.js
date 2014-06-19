@@ -21,12 +21,11 @@ switch (screen.width) {
         Face.SIZE = 80;
         break;
     case 768 :
-        Face.SIZE = 165;
+        Face.SIZE = 200;
         break;
     default :
         Face.SIZE = 100;
 }
-
 
 Face.LEFT = 0;
 Face.RIGHT = 1;
@@ -227,7 +226,7 @@ Rubik.prototype.init = function() {
     };
 
     this._rotation = Quaternion.fromRotation([1, 0, 0], -35).multiply(Quaternion.fromRotation([0, 1, 0], 45));
-    this._node = OZ.DOM.elm("div", {position: "absolute", left: "50%", top: "45%", width: "0px", height: "0px"});
+    this._node = OZ.DOM.elm("div", {position: "absolute", left: "50%", top: "50%", width: "0px", height: "0px"});
     document.body.appendChild(this._node);
 
     OZ.CSS3.set(document.body, "perspective", "460px");

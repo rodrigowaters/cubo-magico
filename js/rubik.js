@@ -12,7 +12,22 @@ Array.prototype.random = function() {
 }
 
 var Face = OZ.Class();
-Face.SIZE = 100;
+
+switch (screen.width) {
+    case 320 :
+        Face.SIZE = 70;
+        break;
+    case 360 :
+        Face.SIZE = 80;
+        break;
+    case 768 :
+        Face.SIZE = 165;
+        break;
+    default :
+        Face.SIZE = 100;
+}
+
+
 Face.LEFT = 0;
 Face.RIGHT = 1;
 Face.TOP = 2;
@@ -212,7 +227,7 @@ Rubik.prototype.init = function() {
     };
 
     this._rotation = Quaternion.fromRotation([1, 0, 0], -35).multiply(Quaternion.fromRotation([0, 1, 0], 45));
-    this._node = OZ.DOM.elm("div", {position: "absolute", left: "50%", top: "55%", width: "0px", height: "0px"});
+    this._node = OZ.DOM.elm("div", {position: "absolute", left: "50%", top: "45%", width: "0px", height: "0px"});
     document.body.appendChild(this._node);
 
     OZ.CSS3.set(document.body, "perspective", "460px");
@@ -236,10 +251,10 @@ Rubik.prototype.randomize = function() {
 
 //            this._help.a = OZ.DOM.elm("p", {innerHTML: "Drag or swipe the background to rotate the whole cube."});
 //            this._help.b = OZ.DOM.elm("p", {innerHTML: "Drag or swipe the cube to rotate its layers."});
-            document.body.appendChild(this._help.a);
-            document.body.appendChild(this._help.b);
-            OZ.CSS3.set(this._help.a, "transition", "opacity 500ms");
-            OZ.CSS3.set(this._help.b, "transition", "opacity 500ms");
+//            document.body.appendChild(this._help.a);
+//            document.body.appendChild(this._help.b);
+//            OZ.CSS3.set(this._help.a, "transition", "opacity 500ms");
+//            OZ.CSS3.set(this._help.b, "transition", "opacity 500ms");
 
         }
     }

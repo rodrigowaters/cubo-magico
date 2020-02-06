@@ -8,6 +8,8 @@ import {Component} from '@angular/core';
 export class HomePage {
 
     constructor() {
+        // @ts-ignore
+        // tslint:disable-next-line:no-unused-expression
         new Rubik();
     }
 
